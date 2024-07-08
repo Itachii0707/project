@@ -46,62 +46,63 @@ int userCount = 0;
 User* currentUser = NULL;
 
 Movie movies[MAX_MOVIES] = {
-    {"The Action Hero", "10:00 AM", "An action-packed thriller.", 50, 920.0, 0, 0.0},
-    {"Love in Paris", "01:00 PM", "A heartwarming romantic comedy.", 40, 740.0, 0, 0.0},
-    {"The Drama Queen", "03:00 PM", "A gripping drama.", 30, 1110.0, 0, 0.0},
-    {"Adventure Island", "06:00 PM", "An exciting adventure.", 20, 1480.0, 0, 0.0},
-    {"Haunted Nights", "09:00 PM", "A chilling horror movie.", 10, 1850.0, 0, 0.0},
-    {"Sci-Fi Odyssey", "11:00 AM", "A journey through space.", 50, 1330.0, 0, 0.0},
-    {"Mystery Manor", "02:00 PM", "A suspenseful mystery.", 30, 1035.0, 0, 0.0},
-    {"Fantasy World", "05:00 PM", "A magical fantasy adventure.", 40, 1630.0, 0, 0.0},
-    {"Crime Story", "08:00 PM", "A thrilling crime drama.", 25, 1410.0, 0, 0.0},
-    {"Comedy Tonight", "10:00 PM", "A hilarious comedy show.", 35, 1185.0, 0, 0.0},
-    {"The Last Samurai", "11:00 AM", "An epic historical drama.", 20, 1780.0, 0, 0.0},
-    {"Romantic Getaway", "01:00 PM", "A romantic journey.", 30, 890.0, 0, 0.0},
-    {"Documentary: Nature", "03:00 PM", "A documentary about nature.", 15, 740.0, 0, 0.0},
-    {"Horror Night", "06:00 PM", "A night of horror stories.", 25, 1480.0, 0, 0.0},
-    {"Sci-Fi Legends", "09:00 PM", "Legends of sci-fi.", 35, 1330.0, 0, 0.0},
-    {"Historical Events", "10:00 AM", "A look at historical events.", 20, 1110.0, 0, 0.0},
-    {"Action Heroes", "12:00 PM", "Stories of action heroes.", 40, 963.0, 0, 0.0},
-    {"Romantic Tales", "03:00 PM", "Romantic tales from history.", 25, 814.0, 0, 0.0},
-    {"Comedy Stars", "06:00 PM", "A look at comedy stars.", 30, 1265.0, 0, 0.0},
-    {"Thriller Night", "09:00 PM", "A night of thrilling stories.", 35, 1555.0, 0, 0.0},
-    {"Fantasy Adventures", "11:00 AM", "Fantasy adventure stories.", 20, 1180.0, 0, 0.0},
-    {"Crime Fighters", "02:00 PM", "Stories of crime fighters.", 25, 1035.0, 0, 0.0},
-    {"Documentary: Space", "05:00 PM", "A documentary about space.", 15, 890.0, 0, 0.0},
-    {"Horror Legends", "08:00 PM", "Legends of horror.", 25, 1480.0, 0, 0.0},
-    {"Sci-Fi Explorers", "10:00 PM", "Explorers of sci-fi.", 35, 1330.0, 0, 0.0},
-    {"Historical Journeys", "10:00 AM", "Journeys through history.", 20, 1110.0, 0, 0.0},
-    {"Action Packed", "12:00 PM", "A pack of action movies.", 40, 963.0, 0, 0.0},
-    {"Romantic Classics", "03:00 PM", "Classic romantic movies.", 25, 814.0, 0, 0.0},
-    {"Comedy Legends", "06:00 PM", "Legends of comedy.", 30, 1265.0, 0, 0.0},
-    {"Thriller Movies", "09:00 PM", "A selection of thriller movies.", 35, 1555.0, 0, 0.0},
-    {"Fantasy World 2", "11:00 AM", "More fantasy adventures.", 20, 1180.0, 0, 0.0},
-    {"Crime Thrillers", "02:00 PM", "Thrilling crime stories.", 25, 1035.0, 0, 0.0},
-    {"Documentary: Oceans", "05:00 PM", "A documentary about oceans.", 15, 890.0, 0, 0.0},
-    {"Horror Classics", "08:00 PM", "Classic horror stories.", 25, 1480.0, 0, 0.0},
-    {"Sci-Fi Futures", "10:00 PM", "The future of sci-fi.", 35, 1330.0, 0, 0.0},
-    {"Historical Drama", "10:00 AM", "Dramatic historical events.", 20, 1110.0, 0, 0.0},
-    {"Action Thrills", "12:00 PM", "Thrilling action movies.", 40, 963.0, 0, 0.0},
-    {"Romantic Stories", "03:00 PM", "Romantic stories to watch.", 25, 814.0, 0, 0.0},
-    {"Comedy Nights", "06:00 PM", "Comedy movies for the night.", 30, 1265.0, 0, 0.0},
-    {"Thriller Classics", "09:00 PM", "Classic thriller movies.", 35, 1555.0, 0, 0.0},
-    {"Fantasy World 3", "11:00 AM", "Even more fantasy adventures.", 20, 1180.0, 0, 0.0},
-    {"Crime Stories", "02:00 PM", "True crime stories.", 25, 1035.0, 0, 0.0},
-    {"Documentary: Wildlife", "05:00 PM", "A documentary about wildlife.", 15, 890.0, 0, 0.0},
-    {"Horror Nights", "08:00 PM", "Horror stories for the night.", 25, 1480.0, 0, 0.0},
-    {"Sci-Fi Stories", "10:00 PM", "Stories from the world of sci-fi.", 35, 1330.0, 0, 0.0},
-    {"Historical Films", "10:00 AM", "Historical films to watch.", 20, 1110.0, 0, 0.0},
-    {"Action Classics", "12:00 PM", "Classic action movies.", 40, 963.0, 0, 0.0},
-    {"Romantic Movies", "03:00 PM", "Romantic movies to enjoy.", 25, 814.0, 0, 0.0},
-    {"Comedy Movies", "06:00 PM", "Comedy movies for everyone.", 30, 1265.0, 0, 0.0},
-    {"Thriller Stories", "09:00 PM", "Stories of thrill and suspense.", 35, 1555.0, 0, 0.0},
-    {"Fantasy Films", "11:00 AM", "Fantasy films to enjoy.", 20, 1180.0, 0, 0.0},
-    {"Crime Films", "02:00 PM", "Films about crime.", 25, 1035.0, 0, 0.0},
-    {"Documentary: Earth", "05:00 PM", "A documentary about Earth.", 15, 890.0, 0, 0.0},
-    {"Horror Films", "08:00 PM", "Horror films to watch.", 25, 1480.0, 0, 0.0},
-    {"Sci-Fi Films", "10:00 PM", "Sci-fi films to enjoy.", 35, 1330.0, 0, 0.0}
+    {"The Action Hero",       "10:00 AM", "An action-packed thriller.",      50,  320.0, 0,  4.0},
+    {"Love in Paris",         "01:00 PM", "A heartwarming romantic comedy.", 40,  240.0, 0,  3.7},
+    {"The Drama Queen",       "03:00 PM", "A gripping drama.",               30,  210.0, 0,  0.0},
+    {"Adventure Island",      "06:00 PM", "An exciting adventure.",          20,  480.0, 0,  0.0},
+    {"Haunted Nights",        "09:00 PM", "A chilling horror movie.",        10,  150.0, 0,  0.0},
+    {"Sci-Fi Odyssey",        "11:00 AM", "A journey through space.",        50,  330.0, 0,  0.0},
+    {"Mystery Manor",         "02:00 PM", "A suspenseful mystery.",          30,  135.0, 0,  0.0},
+    {"Fantasy World",         "05:00 PM", "A magical fantasy adventure.",    40,  230.0, 0,  0.0},
+    {"Crime Story",           "08:00 PM", "A thrilling crime drama.",        25,  410.0, 0,  0.0},
+    {"Comedy Tonight",        "10:00 PM", "A hilarious comedy show.",        35,  185.0, 0,  0.0},
+    {"The Last Samurai",      "11:00 AM", "An epic historical drama.",       20,  280.0, 0,  0.0},
+    {"Romantic Getaway",      "01:00 PM", "A romantic journey.",             30,  190.0, 0,  0.0},
+    {"Documentary: Nature",   "03:00 PM", "A documentary about nature.",     15,  140.0, 0,  0.0},
+    {"Horror Night",          "06:00 PM", "A night of horror stories.",      25,  180.0, 0,  0.0},
+    {"Sci-Fi Legends",        "09:00 PM", "Legends of sci-fi.",              35,  330.0, 0,  0.0},
+    {"Historical Events",     "10:00 AM", "A look at historical events.",    20,  110.0, 0,  0.0},
+    {"Action Heroes",         "12:00 PM", "Stories of action heroes.",       40,  163.0, 0,  0.0},
+    {"Romantic Tales",        "03:00 PM", "Romantic tales from history.",    25,  214.0, 0,  0.0},
+    {"Comedy Stars",          "06:00 PM", "A look at comedy stars.",         30,  265.0, 0,  0.0},
+    {"Thriller Night",        "09:00 PM", "A night of thrilling stories.",   35,  155.0, 0,  0.0},
+    {"Fantasy Adventures",    "11:00 AM", "Fantasy adventure stories.",      20,  180.0, 0,  0.0},
+    {"Crime Fighters",        "02:00 PM", "Stories of crime fighters.",      25,  135.0, 0,  0.0},
+    {"Documentary: Space",    "05:00 PM", "A documentary about space.",      15,  190.0, 0,  0.0},
+    {"Horror Legends",        "08:00 PM", "Legends of horror.",              25,  180.0, 0,  0.0},
+    {"Sci-Fi Explorers",      "10:00 PM", "Explorers of sci-fi.",            35,  330.0, 0,  0.0},
+    {"Historical Journeys",   "10:00 AM", "Journeys through history.",       20,  110.0, 0,  0.0},
+    {"Action Packed",         "12:00 PM", "A pack of action movies.",        40,  163.0, 0,  0.0},
+    {"Romantic Classics",     "03:00 PM", "Classic romantic movies.",        25,  214.0, 0,  0.0},
+    {"Comedy Legends",        "06:00 PM", "Legends of comedy.",              30,  265.0, 0,  0.0},
+    {"Thriller Movies",       "09:00 PM", "A selection of thriller movies.", 35,  155.0, 0,  0.0},
+    {"Fantasy World 2",       "11:00 AM", "More fantasy adventures.",        20,  180.0, 0,  0.0},
+    {"Crime Thrillers",       "02:00 PM", "Thrilling crime stories.",        25,  135.0, 0,  0.0},
+    {"Documentary: Oceans",   "05:00 PM", "A documentary about oceans.",     15,  290.0, 0,  0.0},
+    {"Horror Classics",       "08:00 PM", "Classic horror stories.",         25,  180.0, 0,  0.0},
+    {"Sci-Fi Futures",        "10:00 PM", "The future of sci-fi.",           35,  130.0, 0,  0.0},
+    {"Historical Drama",      "10:00 AM", "Dramatic historical events.",     20,  110.0, 0,  0.0},
+    {"Action Thrills",        "12:00 PM", "Thrilling action movies.",        40,  163.0, 0,  0.0},
+    {"Romantic Stories",      "03:00 PM", "Romantic stories to watch.",      25,  214.0, 0,  0.0},
+    {"Comedy Nights",         "06:00 PM", "Comedy movies for the night.",    30,  265.0, 0,  0.0},
+    {"Thriller Classics",     "09:00 PM", "Classic thriller movies.",        35,  155.0, 0,  0.0},
+    {"Fantasy World 3",       "11:00 AM", "Even more fantasy adventures.",   20,  180.0, 0,  0.0},
+    {"Crime Stories",         "02:00 PM", "True crime stories.",             25,  135.0, 0,  0.0},
+    {"Documentary: Wildlife", "05:00 PM", "A documentary about wildlife.",   15,  190.0, 0,  0.0},
+    {"Horror Nights",         "08:00 PM", "Horror stories for the night.",   25,  180.0, 0,  0.0},
+    {"Sci-Fi Stories",        "10:00 PM", "Stories from the world of sci-fi",35,  130.0, 0,  0.0},
+    {"Historical Films",      "10:00 AM", "Historical films to watch.",      20,  110.0, 0,  0.0},
+    {"Action Classics",       "12:00 PM", "Classic action movies.",          40,  163.0, 0,  0.0},
+    {"Romantic Movies",       "03:00 PM", "Romantic movies to enjoy.",       25,  214.0, 0,  0.0},
+    {"Comedy Movies",         "06:00 PM", "Comedy movies for everyone.",     30,  265.0, 0,  0.0},
+    {"Thriller Stories",      "09:00 PM", "Stories of thrill and suspense.", 35,  155.0, 0,  0.0},
+    {"Fantasy Films",         "11:00 AM", "Fantasy films to enjoy.",         20,  180.0, 0,  0.0},
+    {"Crime Films",           "02:00 PM", "Films about crime.",              25,  135.0, 0,  0.0},
+    {"Documentary: Earth",    "05:00 PM", "A documentary about Earth.",      15,  190.0, 0,  0.0},
+    {"Horror Films",          "08:00 PM", "Horror films to watch.",          25,  180.0, 0,  0.0},
+    {"Sci-Fi Films",          "10:00 PM", "Sci-fi films to enjoy.",          35,  130.0, 0,  0.0}
 };
+
 
 Food foods[MAX_FOODS] = {
     {"Popcorn", 370.0, "Snacks"},
@@ -257,10 +258,27 @@ void updateProfile() {
 }
 
 void displayMovies() {
-    printf("Available Movies:\n");
+    printf("%-4s %-30s %-15s %-45s %-10s %-25s %-15s\n",
+           "No.", "Movie Name", "Showtime", "Description", "Price", "Available Tickets", "Average Rating");
+    printf("%-4s %-30s %-15s %-45s %-10s %-25s %-15s\n",
+           "---", "------------------------------", "---------------", "---------------------------------------",
+           "----------", "--------------------", "---------------");
+
     for (int i = 0; i < MAX_MOVIES; i++) {
-        float averageRating = (movies[i].totalRatings > 0) ? (movies[i].sumRatings / movies[i].totalRatings) : 0.0;
-        printf("%d. %s (%s) - %s - ₹%.2f [%d tickets available] - Average Rating: %.1f\n", i + 1, movies[i].name, movies[i].showtime, movies[i].description, movies[i].price, movies[i].availableTickets, averageRating);
+        // Check if the movie name is not empty
+        if (strlen(movies[i].name) > 0) {
+            float averageRating = (movies[i].totalRatings > 0) 
+                                  ? (movies[i].sumRatings / movies[i].totalRatings) 
+                                  : 0.0;
+            printf("%-4d %-30s %-15s %-45s ₹%-9.2f %-25d %.1f\n",
+                   i + 1,
+                   movies[i].name,
+                   movies[i].showtime,
+                   movies[i].description,
+                   movies[i].price,
+                   movies[i].availableTickets,
+                   averageRating);
+        }
     }
 }
 
@@ -302,18 +320,6 @@ void displayFoods() {
     printf("Available Food Items:\n");
     for (int i = 0; i < MAX_FOODS; i++) {
         printf("%d. %s (%s) - ₹%.2f\n", i + 1, foods[i].name, foods[i].category, foods[i].price);
-    }
-}
-
-void filterFoodsByCategory() {
-    char category[30];
-    printf("Enter food category to filter: ");
-    scanf("%s", category);
-    printf("Filtered Food Items:\n");
-    for (int i = 0; i < MAX_FOODS; i++) {
-        if (strcmp(foods[i].category, category) == 0) {
-            printf("%d. %s (%s) - ₹%.2f\n", i + 1, foods[i].name, foods[i].category, foods[i].price);
-        }
     }
 }
 
@@ -544,15 +550,6 @@ void removeFood() {
     printf("Food removed successfully.\n");
 }
 
-void recommendMovies() {
-    printf("Recommended Movies:\n");
-    for (int i = 0; i < MAX_MOVIES; i++) {
-        float averageRating = (movies[i].totalRatings > 0) ? (movies[i].sumRatings / movies[i].totalRatings) : 0.0;
-        if (averageRating >= 4.0) {
-            printf("%d. %s (%s) - %s - ₹%.2f [%d tickets available] - Average Rating: %.1f\n", i + 1, movies[i].name, movies[i].showtime, movies[i].description, movies[i].price, movies[i].availableTickets, averageRating);
-        }
-    }
-}
 
 void adminMenu() {
     int choice;
@@ -621,16 +618,16 @@ int main() {
         printf("4. View Profile\n");
         printf("5. Update Profile\n");
         printf("6. Search Movie\n");
-        printf("7. Rate Movie\n");
-        printf("8. Book Movie Ticket\n");
+        printf("7. Book Movie Ticket\n");
+        printf("8. Rate Movie\n");
         printf("9. Cancel Movie Ticket\n");
         printf("10. Order Food\n");
         printf("11. Book Cab\n");
         printf("12. View Order History\n");
         printf("13. Calculate Total Expenditure\n");
-        printf("14. Filter Foods by Category\n");
-        printf("15. Recommend Movies\n");
-        printf("16. Admin Menu\n");
+        
+       
+        printf("14. Admin Menu\n");
         printf("0. Exit\n");
         printf("Enter your choice: ");
         scanf("%d", &choice);
@@ -655,10 +652,10 @@ int main() {
                 searchMovie();
                 break;
             case 7:
-                rateMovie();
+                bookMovie();
                 break;
             case 8:
-                bookMovie();
+                rateMovie();
                 break;
             case 9:
                 cancelMovie();
@@ -676,12 +673,6 @@ int main() {
                 calculateTotalExpenditure();
                 break;
             case 14:
-                filterFoodsByCategory();
-                break;
-            case 15:
-                recommendMovies();
-                break;
-            case 16:
                 adminMenu();
                 break;
             case 0:
