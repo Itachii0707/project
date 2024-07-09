@@ -288,7 +288,7 @@ void searchMovie() {
     printf("Search Results:\n");
     for (int i = 0; i < MAX_MOVIES; i++) {
         if (strstr(movies[i].name, query)) {
-            printf("%d. %s (%s) - %s - ₹%.2f [%d tickets available]\n", i + 1, movies[i].name, movies[i].showtime, movies[i].description, movies[i].price, movies[i].availableTickets);
+            printf("%d. %s (%s) - %s - %.2f [%d tickets available]\n", i + 1, movies[i].name, movies[i].showtime, movies[i].description, movies[i].price, movies[i].availableTickets);
         }
     }
 }
@@ -318,14 +318,14 @@ void rateMovie() {
 void displayFoods() {
     printf("Available Food Items:\n");
     for (int i = 0; i < MAX_FOODS; i++) {
-        printf("%d. %s (%s) - ₹%.2f\n", i + 1, foods[i].name, foods[i].category, foods[i].price);
+        printf("%d. %s (%s) - %.2f\n", i + 1, foods[i].name, foods[i].category, foods[i].price);
     }
 }
 
 void displayCabs() {
     printf("Available Cabs:\n");
     for (int i = 0; i < MAX_CABS; i++) {
-        printf("%d. %s - ₹%.2f per km\n", i + 1, cabList[i].type, cabList[i].pricePerKm);
+        printf("%d. %s - %.2f per km\n", i + 1, cabList[i].type, cabList[i].pricePerKm);
     }
 }
 
@@ -365,7 +365,7 @@ float bookMovie() {
     snprintf(orderDescription, sizeof(orderDescription), "Booked %d tickets for %s", tickets, movies[choice].name);
     addOrderToHistory(orderDescription, total);
     
-    printf("Booked %d tickets for %s. Total: ₹%.2f\n", tickets, movies[choice].name, total);
+    printf("Booked %d tickets for %s. Total: %.2f\n", tickets, movies[choice].name, total);
     return total;
 
 }
@@ -391,7 +391,7 @@ void cancelMovie() {
     char orderDescription[100];
     snprintf(orderDescription, sizeof(orderDescription), "Cancelled %d tickets for %s", tickets, movies[choice].name);
     addOrderToHistory(orderDescription, -refund);
-    printf("Cancelled %d tickets for %s. Refund: ₹%.2f\n", tickets, movies[choice].name, refund);
+    printf("Cancelled %d tickets for %s. Refund: %.2f\n", tickets, movies[choice].name, refund);
 }
 
 float orderFood() {
@@ -413,11 +413,11 @@ float orderFood() {
         char orderDescription[100];
         sprintf(orderDescription, "Ordered %d %s", quantity, foods[choice].name);
         addOrderToHistory(orderDescription, foods[choice].price * quantity);
-        printf("Added %d %s to order. Subtotal: ₹%.2f\n", quantity, foods[choice].name, total);
+        printf("Added %d %s to order. Subtotal: %.2f\n", quantity, foods[choice].name, total);
         printf("Order more food? (y/n): ");
         scanf(" %c", &more);
     } while (more == 'y');
-    printf("Total food order cost: ₹%.2f\n", total);
+    printf("Total food order cost: %.2f\n", total);
     return total;
 }
 
@@ -438,7 +438,7 @@ float bookCab() {
     char orderDescription[100];
     sprintf(orderDescription, "Booked %s cab for %.2f km", cabList[choice].type, distance);
     addOrderToHistory(orderDescription, total);
-    printf("Booked %s cab for %.2f km. Total: ₹%.2f\n", cabList[choice].type, distance, total);
+    printf("Booked %s cab for %.2f km. Total: %.2f\n", cabList[choice].type, distance, total);
     return total;
 }
 
@@ -446,7 +446,7 @@ void viewCabBookingHistory() {
     printf("Cab Booking History:\n");
     for (int i = 0; i < historyCount; i++) {
         if (strstr(orderHistory[i].description, "cab")) {
-            printf("%d. %s - ₹%.2f\n", i + 1, orderHistory[i].description, orderHistory[i].cost);
+            printf("%d. %s - %.2f\n", i + 1, orderHistory[i].description, orderHistory[i].cost);
         }
     }
 }
@@ -458,7 +458,7 @@ void viewOrderHistory() {
     }
     printf("Order History:\n");
     for (int i = 0; i < historyCount; i++) {
-        printf("%d. %s - ₹%.2f\n", i + 1, orderHistory[i].description, orderHistory[i].cost);
+        printf("%d. %s - %.2f\n", i + 1, orderHistory[i].description, orderHistory[i].cost);
     }
 }
 
@@ -467,7 +467,7 @@ void calculateTotalExpenditure() {
     for (int i = 0; i < historyCount; i++) {
         total += orderHistory[i].cost;
     }
-    printf("Total expenditure: ₹%.2f\n", total);
+    printf("Total expenditure: %.2f\n", total);
 }
 
 void addMovie() {
