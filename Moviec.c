@@ -270,7 +270,7 @@ void displayMovies() {
             float averageRating = (movies[i].totalRatings > 0) 
                                   ? (movies[i].sumRatings / movies[i].totalRatings) 
                                   : 0.0;
-            printf("%-4d %-30s %-15s %-45s ₹%-9.2f %-25d %.1f\n",
+            printf("%-4d %-30s %-15s %-45s %-9.2f %-25d %.1f\n",
                    i + 1,
                    movies[i].name,
                    movies[i].showtime,
